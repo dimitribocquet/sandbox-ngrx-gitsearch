@@ -14,7 +14,7 @@ import { RepoEffects } from './state/repo.effects';
   imports: [
     CommonModule,
     HttpClientModule,
-    StoreModule.forFeature('repos', reducer),
+    StoreModule.forFeature('repositories', reducer),
     EffectsModule.forFeature([RepoEffects]),
   ],
   exports: [

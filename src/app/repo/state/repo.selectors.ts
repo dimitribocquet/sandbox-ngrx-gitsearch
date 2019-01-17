@@ -1,7 +1,7 @@
 import { createFeatureSelector, createSelector} from '@ngrx/store';
 import { RepoState } from './repo.reducer';
 
-export const getRepoState = createFeatureSelector<RepoState>('repos')
+export const getRepoState = createFeatureSelector<RepoState>('repositories')
 
 export const getAllRepos = createSelector(getRepoState, data => data.repos);
 
