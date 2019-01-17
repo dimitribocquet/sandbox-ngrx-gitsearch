@@ -1,5 +1,7 @@
+import { Load } from './../state/repo.actions';
 import { Component, OnInit } from '@angular/core';
-import { RepoService } from '../repo.service';
+import { Store } from '@ngrx/store';
+// import { RepoService } from '../repo.service';
 
 @Component({
   selector: 'cc-repo-list',
@@ -9,13 +11,16 @@ import { RepoService } from '../repo.service';
 export class RepoListComponent implements OnInit {
 
   constructor(
-    private repoService: RepoService
+    // private repoService: RepoService
+    private store: Store<any>
   ) {
 
   }
 
   ngOnInit() {
-    this.repoService.getRepos().subscribe();
+    this.store.dispatch(new Load());
+
+    // this.repoService.getRepos().subscribe();
   }
 
 }

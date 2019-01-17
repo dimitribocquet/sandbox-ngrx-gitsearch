@@ -14,12 +14,12 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
   ],
   imports: [
     BrowserModule,
-    RepoModule,
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({
       name: 'GitSearch',
       maxAge: 25
-    })
+    }),
+    RepoModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
