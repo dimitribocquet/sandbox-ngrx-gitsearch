@@ -1,9 +1,11 @@
+import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RepoListComponent } from './repo-list/repo-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { reducer } from './state/repo.reducer';
+import { RepoEffects } from './state/repo.effects';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,8 @@ import { reducer } from './state/repo.reducer';
   imports: [
     CommonModule,
     HttpClientModule,
-    StoreModule.forFeature('repos', reducer)
+    StoreModule.forFeature('repos', reducer),
+    EffectsModule.forFeature([RepoEffects]),
   ],
   exports: [
     RepoListComponent
