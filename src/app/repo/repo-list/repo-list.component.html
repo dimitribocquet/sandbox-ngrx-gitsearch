@@ -1,3 +1,8 @@
-<p>
-  repo-list works!
-</p>
+
+<h3>Liste repos</h3>
+
+<div *ngIf="(repos$ | async)?.length">
+  <div *ngFor="let repo of (repos$ | async)">
+    {{ repo.name }}
+  </div>
+</div>
