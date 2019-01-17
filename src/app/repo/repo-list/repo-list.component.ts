@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RepoService } from '../repo.service';
 
 @Component({
   selector: 'cc-repo-list',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RepoListComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private repoService: RepoService
+  ) {
+
+  }
 
   ngOnInit() {
+    this.repoService.getRepos().subscribe();
   }
 
 }
